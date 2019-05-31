@@ -19,7 +19,7 @@ JsonParser::~JsonParser()
 {
 }
 
-std::map<std::string, std::string> JsonParser::parseJson(std::string rawJsonObject)
+std::map<std::string, std::string> JsonParser::parseJson(std::string rawJsonObject) const
 {
-    // First iteration - assume Json format is non-nested. For this, a JsonObject class is needed.
+    // First iteration - assume Json format is not nested. For nested Jsons, a JsonObject class is needed.
 }

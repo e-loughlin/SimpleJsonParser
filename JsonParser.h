@@ -17,5 +17,5 @@ class JsonParser : I_JsonParser
     JsonParser::~JsonParser();
 
  public:
-    std::map<std::string, std::string> parseJson(std::string rawJsonObject) override;
+    std::map<std::string, std::string> parseJson(std::string rawJsonObject) const override;
 };
