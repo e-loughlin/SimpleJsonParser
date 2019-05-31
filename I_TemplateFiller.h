@@ -4,9 +4,9 @@
 * 	May 30 2019 				*/
 
 // I_TemplateFiller: Interface for TemplateFiller - a class that replaces
-// instances of "{{key}}" with "value" for a given string.
+// instances of {{key}} with value for a given string.
 
-#pragma once
+// #pragma once
 #include <string>
 #include <map>
 
