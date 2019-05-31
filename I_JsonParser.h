@@ -7,7 +7,8 @@
 
 #pragma once
 
-class str;
+template <typename T, typename K> class map;
+class string;
 class MyDictionary;
 
 class I_JsonParser
@@ -16,5 +17,5 @@ class I_JsonParser
     virtual I_JsonParser::~I_JsonParser();
 
  public:
-    virtual MyDictionary parseJson(str) = 0;
+    virtual map<string, string> parseJson(string rawJson) = 0;
 };
