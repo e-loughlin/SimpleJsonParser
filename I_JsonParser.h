@@ -6,10 +6,11 @@
 // I_JsonParser: Interface for JsonParser
 
 #pragma once
+#include <string>
+#include <map>
 
 template <typename T, typename K> class map;
 class string;
-class MyDictionary;
 
 class I_JsonParser
 {
@@ -17,5 +18,5 @@ class I_JsonParser
     virtual I_JsonParser::~I_JsonParser();
 
  public:
-    virtual map<string, string> parseJson(string rawJson) = 0;
+    virtual std::map<std::string, std::string> parseJson(std::string rawJsonObject) = 0;
 };
