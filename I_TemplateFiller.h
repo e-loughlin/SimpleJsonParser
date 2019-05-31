@@ -16,6 +16,6 @@ class I_TemplateFiller
     virtual I_TemplateFiller::~I_TemplateFiller();
 
  public:
-    virtual void fillTemplateField(std::string& templateString, std::string key, std::string value) = 0;
-    virtual void fillAllTemplateFields(std::string& templateString, std::map<std::string, std::string>) = 0;
+    virtual void replaceTemplateField(std::string& templateString, std::string key, std::string value) = 0;
+    virtual void replaceAllTemplateFields(std::string& templateString, std::map<std::string, std::string>) = 0;
 };
