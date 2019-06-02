@@ -7,7 +7,7 @@
 
 #include <string>
 
-class I_JsonValue;
+class JsonValue;
 
 class I_JsonObject
 {
@@ -15,5 +15,5 @@ class I_JsonObject
     virtual ~I_JsonObject(){}
 
  public:
-    virtual I_JsonValue value(std::string key);
+    virtual JsonValue value(std::string key) const;
 };
