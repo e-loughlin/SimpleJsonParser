@@ -7,11 +7,14 @@
 
 #include <string>
 
+class JsonObject;
+
 class I_JsonValue
 {
  public:
     virtual ~I_JsonValue(){}
 
  public:
-    virtual std::string toString();
+    virtual JsonObject toJsonObject() const;
+    virtual std::string toString() const;
 };
