@@ -24,5 +24,11 @@ class JsonValue : I_JsonValue
     std::string toString() const override;
 
  private:
+    bool containsOnlyStringPrimitive() const;
+   void JsonValue::initializeValueType() const;
+
+ private:
     std::string rawValue_;
+    std::string string_;
+    JsonObject jsonObject_;
 };

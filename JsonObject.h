@@ -15,12 +15,14 @@ class JsonValue;
 class JsonObject : I_JsonObject
 {
  public:
-    explicit JsonObject(std::string rawValue);
+    explicit JsonObject();
+    explicit JsonObject(std::string rawKeyValuePairs);
     ~JsonObject();
 
  public:
-    JsonValue value(std::string key) const override;
+    I_JsonValue value(std::string key) const override;
 
  private:
     std::map<std::string, JsonValue> keyValuePairs_;
+    std::string rawKeyValuePairs_;
 };

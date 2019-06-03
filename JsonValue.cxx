@@ -12,7 +12,10 @@
 
 JsonValue::JsonValue(std::string rawValue)
 : rawValue_(rawValue)
+, string_("")
+, jsonObject_(JsonObject())
 {
+    initializeValueType();
 }
 
 JsonValue::~JsonValue()
@@ -21,10 +24,28 @@ JsonValue::~JsonValue()
 
 std::string JsonValue::toString() const
 {
-    return rawValue_;
+    return string_;
 }
 
 JsonObject JsonValue::toJsonObject() const
 {
-    return JsonObject(rawValue_);
-} 
+    return jsonObject_;
+}
+
+bool JsonValue::containsOnlyStringPrimitive() const
+{
+    std::string invalidStringPrimitiveCharacter = "{";
+    return (rawValue_.find(invalidStringPrimitiveCharacter) == std::string::npos);
+}
+
+void JsonValue::initializeValueType() const
+{
+    if (containsOnlyStringPrimitive())
+    {
+        string_ = rawValue_;
+    }
+    else
+    {
+        jsonObject_ = JsonObject(rawValue_);
+    }
+}
